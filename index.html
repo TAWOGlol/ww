@@ -3,19 +3,25 @@
 
 <head>
     <title>Salve</title>
+    <meta name="viewport" content="height=device-height width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="oi.css">
-    <script src="oi.js" defer></script>
+    <script defer src="oi.js"></script>
 </head>
 
-<body style="font-family: Comic Sans MS; color: rgb(30, 45, 60);">
-    <div onchange="showOut()" onkeydown="showOut()">
-        <h3>Quanto é 2 + 2?</h3>
-        <p><input type="radio" name="alternativa" value="1">22</p>
-        <p><input type="radio" name="alternativa" value="2">420</p>
-        <p><input type="radio" name="alternativa" value="3">4</p>
-        <p><input type="radio" name="alternativa" value="4">5</p>
-        <button name="butaum" id="butao">Ok</button>
-        <h2 id="output">OUTPUT :THUMBSUP:</h2>
+<body>
+    <div class="conjunto center">
+        <div class="pergunta">
+            <div><span>Quanto é 2 + 2?</span></div>
+        </div>
+        <div class="opcoes">
+            <div><span>A) 22</span></div>
+            <div><span>B) 420</span></div>
+            <div><span>C) 4</span></div>
+            <div><span>D) 5</span></div>
+        </div>
+        <div class="pergunta">
+            <div><span id="output">output</span></div>
+        </div>
     </div>
 </body>
 
