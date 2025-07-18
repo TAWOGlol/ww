@@ -1,79 +1,288 @@
-* {
-    margin: 0;
+:root {
+    --cor4: #ffffff;
+}
+
+.RED {
+    --cor0: #2A1A1A;
+    --cor1: #2D1D1D;
+    --cor2: #312121;
+    --cor3: #3A2525;
+}
+
+.BLU {
+    --cor0: #1A1A2A;
+    --cor1: #1D1D2D;
+    --cor2: #212131;
+    --cor3: #25253A;
 }
 
 html {
-    background-color: #000000;
     display: block;
-}
-
-body {
-    font-family: "Comic Sans MS";
-    background-color: #2C2D32;
-    color: #FFFFFF;
-    width: 100svw;
-    height: 100svh;
-    margin: 0;
-}
-
-.block {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
-.conjunto {
-    background-color: #323339;
-    border-radius: 8px;
-    max-width: 800px;
-    width: 50%;
+html, body {
+    font-family: "Comic Sans MS", "Monospace";
+    font-size: 16px;
+    color: var(--cor4);
 }
 
-.centerh {
-    position: relative;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
+body {
+    margin: 0;
 }
-.centerv {
-    position: relative;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
+
+.jogo, .menu, .win {
+    overflow-y: auto;
+    position: fixed;
+    width: 100svw;
+    min-height: 100svh;
 }
-.center {
+
+.menu {
+    background-color: var(--cor2);
+}
+
+.calendario {
+    width: 96%;
+    margin: auto;
+}
+
+.titulo {
+    background-color: var(--cor3);
+    font-size: 50px;
+    text-align: center;
+    padding: 0.25em;
+}
+
+.tabela {
+    background-color: var(--cor1);
+    box-sizing: border-box;
+    font-size: 0;
+    padding: 4px;
+    width: 100%;
+    margin: auto;
+    >div.blankday {
+        height: 3em;
+        width: 42.84%;
+        margin: 0;
+        background-color: transparent;
+        visibility: hidden;
+    }
+    >div {
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 20px;
+        margin: 1%;
+        width: 12.28%;
+        height: 3em;
+        padding: 0.75em;
+        background-color: var(--cor2);
+        border-radius: 8px;
+    }
+    @media (any-hover: hover) {
+        >div:hover {
+            background-color: var(--cor0);
+        }
+        >div:active {
+            background-color: var(--cor2);
+        }
+    }
+    @media (any-hover: none) {
+        >div:active {
+            background-color: var(--cor0);
+        }
+    }
+}
+
+.jogo {
+    background-color: var(--cor0);
+}
+
+.base {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    box-sizing: border-box;
+    width: 100svw;
+    max-height: 100svh;
+    top: 50svh;
+    transform: translateY(-50%);
+}
+
+.conjunto {
+    background-color: var(--cor1);
+    border-radius: 8px;
+    width: 90%;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.cabess {
+    font-size: 30px;
+    height: 1.5em;
+    padding: 0.25em 0;
+    text-align: center;
+}
+
+.rodape {
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.passar {
+    margin: auto;
+    width: 50%;
+    border-radius: 8px;
+    background-color: var(--cor3);
+    font-size: 16px;
+    text-align: center;
+    height: 1.5em;
+    padding: 0.25em 0;
+}
+@media (any-hover: hover) {
+    .passar:hover {
+        background-color: var(--cor0);
+    }
+    .passar:active {
+        background-color: var(--cor3);
+    }
+}
+@media (any-hover: none) {
+    .passar:active {
+        background-color: var(--cor0);
+    }
+}
+.disablepassar {
+    background-color: var(--cor2);
+    color: #777;
+}
+.disablepassar:active {
+    background-color: var(--cor2);
+}
+.disablepassar:hover {
+    background-color: var(--cor2);
+}
+
+.bloco {
+    box-sizing: border-box;
+    background-color: var(--cor2);
+    border-radius: 8px;
+}
+
+.roundtop {
+    border-radius: 8px 8px 0 0;
+}
+.roundbottom {
+    border-radius: 0 0 8px 8px;
+}
+.round {
+    border-radius: 8px;
 }
 
 .pergunta {
-    width: 90%;
-    height: 3rem;
-    position: relative;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
     font-size: 20px;
-    >div {
-        position: absolute;
-        top: 50%;
-        transform: translate3d(0, -50%, 0);
-    }
+    height: 1.5em;
+    padding: 0.75em 1em;
 }
 
 .opcoes {
     >div {
-        width: 90%;
-        height: 3rem;
-        position: relative;
-        left: 50%;
-        transform: translate3d(-50%, 0, 0);
-        >span {
-            position: absolute;
-            top: 50%;
-            transform: translate3d(0, -50%, 0);
+        height: 1.5em;
+        padding: 0.75em 1em;
+    }
+    @media (any-hover: hover) {
+        >div:hover {
+            background-color: var(--cor0);
         }
     }
+    @media (any-hover: none) {
+        >div:active {
+            background-color: var(--cor0);
+        }
+    }
+}
+
+.win {
+    background-color: var(--cor2);
+}
+
+.comemoracao {
+    position: fixed;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 50px;
+    width: 100svw;
+    top: 50svh;
+    transform: translateY(-50%);
+}
+
+.players {
+    display: inline-block;
+    position: fixed;
+    width: 100svw;
+    font-size: 0;
+    top: 100svh;
+    transform: translateY(-100%);
+    >div {
+        display: inline-block;
+        font-size: 20px;
+        width: 50%;
+        text-align: center;
+        >div {
+            margin: auto;
+            width: 90%;
+            height: 1.5em;
+            padding: 0.75em 0;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}
+
+.red {
+    background-color: var(--cor3);
+}
+
+.blu {
+    background-color: var(--cor3);
+}
+
+.deselect {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.correct, .wrong {
+    color: #ffffff;
+    position: fixed;
+    width: 100svw;
+    height: 100svh;
+    font-size: 100vmin;
+    font-family: "courier";
+    text-align: center;
+    display: none;
+    top: 0;
+    line-height: 100svh;
+}
+.correct {
+    background-color: #10AA20;
+}
+.wrong {
+    background-color: #AA1020;
+}
+
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+.fadeout {
+    opacity: 1;
+    display: block;
+    animation: fadeout 500ms ease-in 200ms both;
 }
