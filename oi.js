@@ -327,9 +327,9 @@ function win(value) {
 function home() {
     jogo.classList.add("invisible");
     if (count == 29) {
+        p0 = pontos[0];
         p1 = pontos[1];
-        p2 = pontos[2];
-        win((p1 >= p2) + (p1 == p2));
+        win((p1 >= p0) + (p1 == p0));
     }
 }
 
