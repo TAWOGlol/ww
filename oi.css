@@ -16,6 +16,15 @@
     --cor3: #25253A;
 }
 
+.DRAW {
+    --cor0: #292929;
+    --cor1: #2D2D2D;
+    --cor2: #333333;
+    --cor3: #3A3A3A;
+}
+
+
+
 html {
     display: block;
     user-select: none;
@@ -253,7 +262,7 @@ body {
     visibility: hidden;
 }
 
-.correct, .wrong {
+.correct, .wrong, .bum {
     color: #ffffff;
     position: fixed;
     width: 100svw;
@@ -261,9 +270,9 @@ body {
     font-size: 100vmin;
     font-family: "courier";
     text-align: center;
-    display: none;
     top: 0;
     line-height: 100svh;
+    display: none;
 }
 .correct {
     background-color: #10AA20;
@@ -271,7 +280,10 @@ body {
 .wrong {
     background-color: #AA1020;
 }
-
+.bum {
+    font-size: 50vmin;
+    background-color: #000000;
+}
 
 @keyframes fadeout {
     from {
