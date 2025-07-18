@@ -306,6 +306,7 @@ function bimba() {
     bum.classList.add("fadeout");
     score(-1);
     changeteam();
+    home()
 }
 
 function score(value, tiimu = team) {
